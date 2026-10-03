@@ -1,0 +1,15 @@
+../Core/Src/WavPlayer.c:24:6:WavPlayer_SetVolume	16	static
+../Core/Src/WavPlayer.c:35:6:HAL_I2S_TxHalfCpltCallback	16	static
+../Core/Src/WavPlayer.c:41:6:HAL_I2S_TxCpltCallback	16	static
+../Core/Src/WavPlayer.c:56:16:parse_wav_header	64	static
+../Core/Src/WavPlayer.c:113:13:fill_stereo_block	72	static
+../Core/Src/WavPlayer.c:170:6:WavPlayer_Init	16	static
+../Core/Src/WavPlayer.c:176:6:WavPlayer_Stop	16	static
+../Core/Src/WavPlayer.c:187:9:WavPlayer_Play	32	static
+../Core/Src/WavPlayer.c:241:6:WavPlayer_Pause	16	static
+../Core/Src/WavPlayer.c:250:6:WavPlayer_Resume	16	static
+../Core/Src/WavPlayer.c:259:6:WavPlayer_Poll	24	static
+../Core/Src/WavPlayer.c:270:9:WavPlayer_IsFinished	16	static
+../Core/Src/WavPlayer.c:275:10:WavPlayer_GetElapsedSeconds	24	static
+../Core/Src/WavPlayer.c:282:10:WavPlayer_GetTotalSeconds	16	static
+../Core/Src/WavPlayer.c:288:9:WavPlayer_GetProgressFraction	48	static

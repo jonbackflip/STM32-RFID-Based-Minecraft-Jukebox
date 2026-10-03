@@ -1,0 +1,10 @@
+Drivers/CMSIS_DSP/Source/CommonTables/arm_common_tables_f16.o: \
+ ../Drivers/CMSIS_DSP/Source/CommonTables/arm_common_tables_f16.c \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types_f16.h \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types.h \
+ ../Drivers/CMSIS/Include/cmsis_compiler.h \
+ ../Drivers/CMSIS/Include/cmsis_gcc.h
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types_f16.h:
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types.h:
+../Drivers/CMSIS/Include/cmsis_compiler.h:
+../Drivers/CMSIS/Include/cmsis_gcc.h:

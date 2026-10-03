@@ -1,0 +1,20 @@
+Drivers/CMSIS_DSP/Source/BasicMathFunctions/arm_scale_f16.o: \
+ ../Drivers/CMSIS_DSP/Source/BasicMathFunctions/arm_scale_f16.c \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/dsp/basic_math_functions_f16.h \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types_f16.h \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types.h \
+ ../Drivers/CMSIS/Include/cmsis_compiler.h \
+ ../Drivers/CMSIS/Include/cmsis_gcc.h \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_memory.h \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/dsp/none.h \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types.h \
+ C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/dsp/utils.h
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/dsp/basic_math_functions_f16.h:
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types_f16.h:
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types.h:
+../Drivers/CMSIS/Include/cmsis_compiler.h:
+../Drivers/CMSIS/Include/cmsis_gcc.h:
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_memory.h:
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/dsp/none.h:
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/arm_math_types.h:
+C:/Users/Johnathan\ Guzman/Documents/GitHub/STM32-RFID-Based-Minecraft-Jukebox/Jukebox_STM32CubeIDE_Files/Drivers/CMSIS_DSP/Include/dsp/utils.h:
