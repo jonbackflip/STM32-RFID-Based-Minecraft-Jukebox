@@ -67,11 +67,14 @@ UART_HandleTypeDef huart2;
 // ---- OLED redraw throttle (set by TIM2 ISR, checked once per main loop) --
 volatile uint8_t oledNeedsRedraw = 0;
 
-// ---- RFID polling state (unchanged from before) --------------------------
-#define RFID_POLL_INTERVAL_MS 100
+// ---- Idle-screen animation (jukebox icon + flashing arrow) --------------
+// Toggled every TIM2 tick (250ms) -> 2Hz blinking rate
+static volatile uint8_t arrowBlinkOn = 0;
+
+// ---- RFID polling state (set by TIM1 ISR, checked once per main loop) --------------------------
+volatile uint8_t rfidPollDue = 0;
 typedef enum { RFID_WAIT_CARD, RFID_CARD_PRESENT } RfidState_t;
 static RfidState_t rfidState = RFID_WAIT_CARD;
-static uint32_t rfidLastPoll = 0;
 
 #define RFID_DETECT_CONFIRM_COUNT   3
 #define RFID_REMOVE_CONFIRM_COUNT   5
@@ -195,6 +198,7 @@ int main(void)
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
+  HAL_TIM_Base_Start_IT(&htim1);
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
   __HAL_TIM_ENABLE_IT(&htim4, TIM_IT_UPDATE);
@@ -235,10 +239,15 @@ int main(void)
 	  // Polled every 20ms
 	  UI_Poll(&player);
 
-	  // 3. RFID -- polls every 100ms. Worst-case internal blocking of
+	  // 3. RFID -- polls every 100ms by flag set by the TIM2 ISR.
+	  //    The worst-case of the internal blocking of
 	  //    ~50ms in RequestA's timeout/error path fits well inside the
 	  //    ~93ms of slack the 4096-frame I2S half-buffer provides.
-	  RFID_Poll(&rfID, &player);
+	  if (rfidPollDue)
+	  {
+		  rfidPollDue = 0;
+		  RFID_Poll(&rfID, &player);
+	  }
 
 
 
@@ -459,7 +468,7 @@ static void MX_TIM1_Init(void)
   htim1.Instance = TIM1;
   htim1.Init.Prescaler = 10000-1;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim1.Init.Period = 500-1;
+  htim1.Init.Period = 1000-1;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim1.Init.RepetitionCounter = 0;
   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
@@ -503,9 +512,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 5000-1;
+  htim2.Init.Prescaler = 10000-1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 250-1;
+  htim2.Init.Period = 2500-1;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -709,9 +718,14 @@ void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-    if (htim->Instance == TIM2)
+	if (htim->Instance == TIM1)
+	{
+		rfidPollDue = 1;
+	}
+	else if (htim->Instance == TIM2)
     {
         oledNeedsRedraw = 1;
+        arrowBlinkOn = ! arrowBlinkOn;
     }
     else if (htim->Instance == TIM4)
         {
@@ -734,12 +748,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 static void RFID_Poll(MFRC522_t *dev, WavPlayer_t *wp)
 {
-    uint32_t now = HAL_GetTick();
-    if ((now - rfidLastPoll) < RFID_POLL_INTERVAL_MS) return;
-    rfidLastPoll = now;
-
     uint8_t localAtqa[2];
     uint8_t detected = (MFRC522_RequestA(dev, localAtqa) == STATUS_OK);
+    // USER_LOG("RFID_Poll() called");
 
     if (rfidState == RFID_WAIT_CARD) // Check RFID CARD presence
     {
@@ -747,6 +758,7 @@ static void RFID_Poll(MFRC522_t *dev, WavPlayer_t *wp)
         {
             rfidBadStreak = 0;
             rfidGoodStreak++;
+            // USER_LOG("Detected a card");
 
             if (rfidGoodStreak >= RFID_DETECT_CONFIRM_COUNT)
             {
@@ -837,7 +849,47 @@ static void OLED_Redraw(WavPlayer_t *wp)
 
     if (wp->state == WAV_IDLE || wp->state == WAV_ERROR)
     {
-        ssd1306_print(16, 28, "INSERT DISC [][]");
+    	ssd1306_print(16, 52, "INSERT DISC");
+
+        // Isometric jukebox "block" -- wireframe cube: 6 outer edges plus
+		// 3 internal edges from the center to alternating vertices, the
+		// classic way to fake 3 visible faces on a monochrome display
+		// without needing a raster bitmap. Small circle on the top face
+		// stands in for the record/disc slot.
+		const int cx = 64, cy = 34, s = 10;
+		const int top[2]    = {cx,        cy - s};
+		const int rTop[2]   = {cx + 9,    cy - s/2};
+		const int rBot[2]   = {cx + 9,    cy + s/2};
+		const int bot[2]    = {cx,        cy + s};
+		const int lBot[2]   = {cx - 9,    cy + s/2};
+		const int lTop[2]   = {cx - 9,    cy - s/2};
+		const int center[2] = {cx, cy};
+
+		ssd1306_draw_line(top[0], top[1], rTop[0], rTop[1]);
+		ssd1306_draw_line(rTop[0], rTop[1], rBot[0], rBot[1]);
+		ssd1306_draw_line(rBot[0], rBot[1], bot[0], bot[1]);
+		ssd1306_draw_line(bot[0], bot[1], lBot[0], lBot[1]);
+		ssd1306_draw_line(lBot[0], lBot[1], lTop[0], lTop[1]);
+		ssd1306_draw_line(lTop[0], lTop[1], top[0], top[1]);
+		ssd1306_draw_line(center[0], center[1], bot[0], bot[1]);
+		ssd1306_draw_line(center[0], center[1], rTop[0], rTop[1]);
+		ssd1306_draw_line(center[0], center[1], lTop[0], lTop[1]);
+		ssd1306_draw_circle(cx, cy - s/2, 2); // record slot on the top face
+
+		// Flashing arrow above it, pointing down -- only drawn on the
+		// "on" half of arrowBlinkOn's 2Hz toggle (set in the TIM2 ISR)
+		// Plus music notes after "INSERT DISC"
+		if (arrowBlinkOn)
+		{
+			ssd1306_draw_line(cx, 5, cx, 15);        // shaft
+			ssd1306_draw_line(cx, 18, cx - 4, 15);   // left head
+			ssd1306_draw_line(cx, 18, cx + 4, 15);   // right head
+
+			ssd1306_print(85, 52, "[][]");
+		}
+		else {
+			ssd1306_print(85, 52, "][][");
+		}
     }
     else
     {
@@ -852,6 +904,10 @@ static void OLED_Redraw(WavPlayer_t *wp)
         ssd1306_draw_rect(10, 22, 104, 10);
         ssd1306_filled_rect(12, 24, barWidth, 6);
 
+        // Volume bar (0-100%, increments of 5%)
+		ssd1306_draw_rect(10, 56, 104, 6);
+		ssd1306_filled_rect(11, 57, (uint8_t)((uint32_t)volumePercent * 102 / 100), 4);
+
         // Elapsed / total time
         char timeStr[20];
         uint32_t elapsed = WavPlayer_GetElapsedSeconds(wp);
@@ -863,11 +919,7 @@ static void OLED_Redraw(WavPlayer_t *wp)
         if (wp->state == WAV_PAUSED) ssd1306_print(10, 48, "PAUSED");
     }
 
-    // Volume bar (always shown)
-    ssd1306_draw_rect(10, 56, 104, 6);
-    ssd1306_filled_rect(11, 57, (uint8_t)((uint32_t)volumePercent * 102 / 100), 4);
-
-    ssd1306_update(); // non-blocking, DMA-driven
+    ssd1306_update(); // RN : NOT non-blocking, DMA-driven
 }
 
 /* USER CODE END 4 */
