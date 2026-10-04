@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         0000f124  080001a0  080001a0  000011a0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000988  0800f2c4  0800f2c4  000102c4  2**2
+  2 .rodata       000009c8  0800f2c4  0800f2c4  000102c4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  0800fc4c  0800fc4c  00011080  2**0
+  3 .ARM.extab    00000000  0800fc8c  0800fc8c  00011080  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000008  0800fc4c  0800fc4c  00010c4c  2**2
+  4 .ARM          00000008  0800fc8c  0800fc8c  00010c8c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  0800fc54  0800fc54  00011080  2**0
+  5 .preinit_array 00000000  0800fc94  0800fc94  00011080  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  0800fc54  0800fc54  00010c54  2**2
+  6 .init_array   00000004  0800fc94  0800fc94  00010c94  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  0800fc58  0800fc58  00010c58  2**2
+  7 .fini_array   00000004  0800fc98  0800fc98  00010c98  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         00000080  20000000  0800fc5c  00011000  2**2
+  8 .data         00000080  20000000  0800fc9c  00011000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          0000b1c8  20000080  0800fcdc  00011080  2**2
+  9 .bss          0000b1c8  20000080  0800fd1c  00011080  2**2
                   ALLOC
- 10 ._user_heap_stack 00000600  2000b248  0800fcdc  00011248  2**0
+ 10 ._user_heap_stack 00000600  2000b248  0800fd1c  00011248  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00011080  2**0
                   CONTENTS, READONLY
@@ -2068,10 +2068,10 @@ void ssd1306_draw_char(int x, int y, char c)
  8001006:	46bd      	mov	sp, r7
  8001008:	bd80      	pop	{r7, pc}
  800100a:	bf00      	nop
- 800100c:	0800f670 	.word	0x0800f670
- 8001010:	0800f704 	.word	0x0800f704
- 8001014:	0800f738 	.word	0x0800f738
- 8001018:	0800f73d 	.word	0x0800f73d
+ 800100c:	0800f698 	.word	0x0800f698
+ 8001010:	0800f72c 	.word	0x0800f72c
+ 8001014:	0800f760 	.word	0x0800f760
+ 8001018:	0800f765 	.word	0x0800f765
 
 0800101c <ssd1306_print>:
 
@@ -3319,7 +3319,7 @@ uint8_t WavPlayer_GetProgressFraction(WavPlayer_t *wp)
  80018a4:	e8bd 8fb0 	ldmia.w	sp!, {r4, r5, r7, r8, r9, sl, fp, pc}
 
 080018a8 <find_song_by_uid>:
-	{ {0xD0, 0x92, 0xA2, 0x5C}, "Relic.WAV" },
+	{ {0x10, 0x0C, 0x10, 0x56}, "Melonkale.WAV" },
 };
 #define SONG_TABLE_COUNT (sizeof(songTable) / sizeof(songTable[0]))
 
@@ -3356,7 +3356,7 @@ static const SongEntry_t *find_song_by_uid(const uint8_t *uid)
  80018da:	3301      	adds	r3, #1
  80018dc:	60fb      	str	r3, [r7, #12]
  80018de:	68fb      	ldr	r3, [r7, #12]
- 80018e0:	2b0b      	cmp	r3, #11
+ 80018e0:	2b0e      	cmp	r3, #14
  80018e2:	d9e8      	bls.n	80018b6 <find_song_by_uid+0xe>
     return NULL;
  80018e4:	2300      	movs	r3, #0
@@ -3366,7 +3366,7 @@ static const SongEntry_t *find_song_by_uid(const uint8_t *uid)
  80018ea:	46bd      	mov	sp, r7
  80018ec:	bd80      	pop	{r7, pc}
  80018ee:	bf00      	nop
- 80018f0:	0800f744 	.word	0x0800f744
+ 80018f0:	0800f76c 	.word	0x0800f76c
 
 080018f4 <_write>:
 
@@ -3550,7 +3550,7 @@ int main(void)
  80019ec:	4811      	ldr	r0, [pc, #68]	@ (8001a34 <main+0x108>)
  80019ee:	f000 fc3b 	bl	8002268 <UI_Poll>
 
-	  // 3. RFID -- polls every 100ms by flag set by the TIM2 ISR.
+	  // 3. RFID -- polls every 100ms by flag set by the TIM1 ISR.
 	  //    The worst-case of the internal blocking of
 	  //    ~50ms in RequestA's timeout/error path fits well inside the
 	  //    ~93ms of slack the 4096-frame I2S half-buffer provides.
@@ -3599,9 +3599,9 @@ int main(void)
  8001a38:	20000001 	.word	0x20000001
  8001a3c:	2000a084 	.word	0x2000a084
  8001a40:	2000a088 	.word	0x2000a088
- 8001a44:	0800f4a4 	.word	0x0800f4a4
- 8001a48:	0800f4c4 	.word	0x0800f4c4
- 8001a4c:	0800f4d4 	.word	0x0800f4d4
+ 8001a44:	0800f4cc 	.word	0x0800f4cc
+ 8001a48:	0800f4ec 	.word	0x0800f4ec
+ 8001a4c:	0800f4fc 	.word	0x0800f4fc
  8001a50:	20008ffe 	.word	0x20008ffe
  8001a54:	20008ffc 	.word	0x20008ffc
 
@@ -4993,11 +4993,11 @@ static void RFID_Poll(MFRC522_t *dev, WavPlayer_t *wp)
  8002248:	20009001 	.word	0x20009001
  800224c:	20009000 	.word	0x20009000
  8002250:	2000900c 	.word	0x2000900c
- 8002254:	0800f500 	.word	0x0800f500
- 8002258:	0800f528 	.word	0x0800f528
- 800225c:	0800f53c 	.word	0x0800f53c
- 8002260:	0800f564 	.word	0x0800f564
- 8002264:	0800f58c 	.word	0x0800f58c
+ 8002254:	0800f528 	.word	0x0800f528
+ 8002258:	0800f550 	.word	0x0800f550
+ 800225c:	0800f564 	.word	0x0800f564
+ 8002260:	0800f58c 	.word	0x0800f58c
+ 8002264:	0800f5b4 	.word	0x0800f5b4
 
 08002268 <UI_Poll>:
 
@@ -5130,8 +5130,8 @@ static void UI_Poll(WavPlayer_t *wp)
  8002340:	20009004 	.word	0x20009004
  8002344:	40020400 	.word	0x40020400
  8002348:	20009008 	.word	0x20009008
- 800234c:	0800f5a4 	.word	0x0800f5a4
- 8002350:	0800f5c4 	.word	0x0800f5c4
+ 800234c:	0800f5cc 	.word	0x0800f5cc
+ 8002350:	0800f5ec 	.word	0x0800f5ec
  8002354:	20009009 	.word	0x20009009
 
 08002358 <OLED_Redraw>:
@@ -5506,17 +5506,17 @@ static void OLED_Redraw(WavPlayer_t *wp)
  8002652:	46bd      	mov	sp, r7
  8002654:	bdb0      	pop	{r4, r5, r7, pc}
  8002656:	bf00      	nop
- 8002658:	0800f5e0 	.word	0x0800f5e0
+ 8002658:	0800f608 	.word	0x0800f608
  800265c:	20008ffd 	.word	0x20008ffd
- 8002660:	0800f5ec 	.word	0x0800f5ec
- 8002664:	0800f5f4 	.word	0x0800f5f4
- 8002668:	0800f5fc 	.word	0x0800f5fc
+ 8002660:	0800f614 	.word	0x0800f614
+ 8002664:	0800f61c 	.word	0x0800f61c
+ 8002668:	0800f624 	.word	0x0800f624
  800266c:	80808081 	.word	0x80808081
  8002670:	20000001 	.word	0x20000001
  8002674:	51eb851f 	.word	0x51eb851f
  8002678:	88888889 	.word	0x88888889
- 800267c:	0800f604 	.word	0x0800f604
- 8002680:	0800f620 	.word	0x0800f620
+ 800267c:	0800f62c 	.word	0x0800f62c
+ 8002680:	0800f648 	.word	0x0800f648
 
 08002684 <Error_Handler>:
 /**
@@ -7243,7 +7243,7 @@ void SystemInit(void)
  8002f74:	20020000 	.word	0x20020000
  8002f78:	20000000 	.word	0x20000000
  8002f7c:	20000080 	.word	0x20000080
- 8002f80:	0800fc5c 	.word	0x0800fc5c
+ 8002f80:	0800fc9c 	.word	0x0800fc9c
  8002f84:	20000080 	.word	0x20000080
  8002f88:	2000b248 	.word	0x2000b248
 
@@ -9414,7 +9414,7 @@ static uint32_t DMA_CalcBaseAndBitshift(DMA_HandleTypeDef *hdma)
  8003ab4:	4770      	bx	lr
  8003ab6:	bf00      	nop
  8003ab8:	aaaaaaab 	.word	0xaaaaaaab
- 8003abc:	0800f7bc 	.word	0x0800f7bc
+ 8003abc:	0800f7fc 	.word	0x0800f7fc
 
 08003ac0 <DMA_CheckFifoParam>:
   * @param  hdma       pointer to a DMA_HandleTypeDef structure that contains
@@ -16258,7 +16258,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(const RCC_ClkInitTypeDef  *RCC_ClkInitStru
  800624e:	bf00      	nop
  8006250:	40023c00 	.word	0x40023c00
  8006254:	40023800 	.word	0x40023800
- 8006258:	0800f7a4 	.word	0x0800f7a4
+ 8006258:	0800f7e4 	.word	0x0800f7e4
  800625c:	20000018 	.word	0x20000018
  8006260:	2000001c 	.word	0x2000001c
 
@@ -16562,7 +16562,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  80064a4:	4618      	mov	r0, r3
  80064a6:	bd80      	pop	{r7, pc}
  80064a8:	40023800 	.word	0x40023800
- 80064ac:	0800f7b4 	.word	0x0800f7b4
+ 80064ac:	0800f7f4 	.word	0x0800f7f4
 
 080064b0 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -16588,7 +16588,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  80064cc:	4618      	mov	r0, r3
  80064ce:	bd80      	pop	{r7, pc}
  80064d0:	40023800 	.word	0x40023800
- 80064d4:	0800f7b4 	.word	0x0800f7b4
+ 80064d4:	0800f7f4 	.word	0x0800f7f4
 
 080064d8 <HAL_RCCEx_PeriphCLKConfig>:
   *        domain (RTC and RCC_BDCR register expect BKPSRAM) will be reset
@@ -28370,7 +28370,7 @@ void MX_FATFS_Init(void)
  800a7b4:	bf00      	nop
  800a7b6:	bd80      	pop	{r7, pc}
  800a7b8:	2000a084 	.word	0x2000a084
- 800a7bc:	0800f7c4 	.word	0x0800f7c4
+ 800a7bc:	0800f804 	.word	0x0800f804
  800a7c0:	2000a080 	.word	0x2000a080
 
 0800a7c4 <get_fattime>:
@@ -32405,7 +32405,7 @@ int cmp_lfn (				/* 1:matched, 0:not matched */
  800bf66:	46bd      	mov	sp, r7
  800bf68:	bd90      	pop	{r4, r7, pc}
  800bf6a:	bf00      	nop
- 800bf6c:	0800f858 	.word	0x0800f858
+ 800bf6c:	0800f898 	.word	0x0800f898
 
 0800bf70 <put_lfn>:
 	const WCHAR* lfn,	/* Pointer to the LFN */
@@ -32529,7 +32529,7 @@ int cmp_lfn (				/* 1:matched, 0:not matched */
  800c036:	46bd      	mov	sp, r7
  800c038:	bd80      	pop	{r7, pc}
  800c03a:	bf00      	nop
- 800c03c:	0800f858 	.word	0x0800f858
+ 800c03c:	0800f898 	.word	0x0800f898
 
 0800c040 <gen_numname>:
 	BYTE* dst,			/* Pointer to the buffer to store numbered SFN */
@@ -33695,9 +33695,9 @@ FRESULT create_name (	/* FR_OK: successful, FR_INVALID_NAME: could not create */
 		if (!w) break;					/* Break on end of the LFN */
  800c7d8:	bf00      	nop
  800c7da:	e006      	b.n	800c7ea <create_name+0x2da>
- 800c7dc:	0800f628 	.word	0x0800f628
- 800c7e0:	0800f7d8 	.word	0x0800f7d8
- 800c7e4:	0800f634 	.word	0x0800f634
+ 800c7dc:	0800f650 	.word	0x0800f650
+ 800c7e0:	0800f818 	.word	0x0800f818
+ 800c7e4:	0800f65c 	.word	0x0800f65c
 			if (si > di) break;			/* No extension */
  800c7e8:	bf00      	nop
 	}
@@ -37084,7 +37084,7 @@ WCHAR ff_convert (	/* Converted character, Returns zero on error */
  800ddc4:	f85d 7b04 	ldr.w	r7, [sp], #4
  800ddc8:	4770      	bx	lr
  800ddca:	bf00      	nop
- 800ddcc:	0800f868 	.word	0x0800f868
+ 800ddcc:	0800f8a8 	.word	0x0800f8a8
 
 0800ddd0 <ff_wtoupper>:
 
@@ -37244,8 +37244,8 @@ WCHAR ff_wtoupper (	/* Returns upper converted character */
  800ded4:	f85d 7b04 	ldr.w	r7, [sp], #4
  800ded8:	4770      	bx	lr
  800deda:	bf00      	nop
- 800dedc:	0800f968 	.word	0x0800f968
- 800dee0:	0800fb5c 	.word	0x0800fb5c
+ 800dedc:	0800f9a8 	.word	0x0800f9a8
+ 800dee0:	0800fb9c 	.word	0x0800fb9c
 
 0800dee4 <ff_memalloc>:
 */
@@ -38146,10 +38146,10 @@ void ff_memfree (
  800e67e:	4798      	blx	r3
  800e680:	3601      	adds	r6, #1
  800e682:	e7f2      	b.n	800e66a <__libc_init_array+0x1e>
- 800e684:	0800fc54 	.word	0x0800fc54
- 800e688:	0800fc54 	.word	0x0800fc54
- 800e68c:	0800fc54 	.word	0x0800fc54
- 800e690:	0800fc58 	.word	0x0800fc58
+ 800e684:	0800fc94 	.word	0x0800fc94
+ 800e688:	0800fc94 	.word	0x0800fc94
+ 800e68c:	0800fc94 	.word	0x0800fc94
+ 800e690:	0800fc98 	.word	0x0800fc98
 
 0800e694 <__retarget_lock_init_recursive>:
  800e694:	4770      	bx	lr
@@ -38523,11 +38523,11 @@ void ff_memfree (
  800e9e0:	f000 f9b8 	bl	800ed54 <_printf_i>
  800e9e4:	e7ee      	b.n	800e9c4 <_svfiprintf_r+0x1b8>
  800e9e6:	bf00      	nop
- 800e9e8:	0800fc18 	.word	0x0800fc18
- 800e9ec:	0800fc22 	.word	0x0800fc22
+ 800e9e8:	0800fc58 	.word	0x0800fc58
+ 800e9ec:	0800fc62 	.word	0x0800fc62
  800e9f0:	00000000 	.word	0x00000000
  800e9f4:	0800e74d 	.word	0x0800e74d
- 800e9f8:	0800fc1e 	.word	0x0800fc1e
+ 800e9f8:	0800fc5e 	.word	0x0800fc5e
 
 0800e9fc <__sfputc_r>:
  800e9fc:	6893      	ldr	r3, [r2, #8]
@@ -38792,11 +38792,11 @@ void ff_memfree (
  800ec5c:	f000 f87a 	bl	800ed54 <_printf_i>
  800ec60:	e7e5      	b.n	800ec2e <_vfiprintf_r+0x1de>
  800ec62:	bf00      	nop
- 800ec64:	0800fc18 	.word	0x0800fc18
- 800ec68:	0800fc22 	.word	0x0800fc22
+ 800ec64:	0800fc58 	.word	0x0800fc58
+ 800ec68:	0800fc62 	.word	0x0800fc62
  800ec6c:	00000000 	.word	0x00000000
  800ec70:	0800ea2b 	.word	0x0800ea2b
- 800ec74:	0800fc1e 	.word	0x0800fc1e
+ 800ec74:	0800fc5e 	.word	0x0800fc5e
 
 0800ec78 <_printf_common>:
  800ec78:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -39130,8 +39130,8 @@ void ff_memfree (
  800ef90:	f104 0619 	add.w	r6, r4, #25
  800ef94:	e7f5      	b.n	800ef82 <_printf_i+0x22e>
  800ef96:	bf00      	nop
- 800ef98:	0800fc29 	.word	0x0800fc29
- 800ef9c:	0800fc3a 	.word	0x0800fc3a
+ 800ef98:	0800fc69 	.word	0x0800fc69
+ 800ef9c:	0800fc7a 	.word	0x0800fc7a
 
 0800efa0 <__sflush_r>:
  800efa0:	f9b1 200c 	ldrsh.w	r2, [r1, #12]

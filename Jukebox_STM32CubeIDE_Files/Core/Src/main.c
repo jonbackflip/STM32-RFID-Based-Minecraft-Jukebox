@@ -97,7 +97,8 @@ typedef struct {
 } SongEntry_t;
 
 static const SongEntry_t songTable[] = {
-    { {0x81, 0xA0, 0xC9, 0x66}, "Cat.WAV" },  // WHITE CARD
+	{ {0xD0, 0xF6, 0xFF, 0x5C}, "Alpha.WAV" },
+    { {0x10, 0x27, 0x00, 0x56}, "Cat.WAV" },
 	{ {0xD0, 0x8A, 0x78, 0x5C}, "Blocks.WAV" },
 	{ {0xC7, 0x6D, 0x8D, 0x64}, "Chirp.WAV"  },
 	{ {0xD0, 0x3B, 0x70, 0x5C}, "Far.WAV"  },
@@ -107,8 +108,10 @@ static const SongEntry_t songTable[] = {
 	{ {0xE0, 0x5B, 0x7D, 0x5C}, "Strad.WAV" },
 	{ {0xD0, 0xE6, 0x6A, 0x5C}, "Ward.WAV" },
 	{ {0x00, 0x17, 0x1A, 0x56}, "Wait.WAV" },
+	{ {0xC0, 0xD9, 0x2F, 0x5C}, "Pigstep.WAV" },
 	{ {0x71, 0x9B, 0x3E, 0x6E}, "Otherside.WAV" },
 	{ {0xD0, 0x92, 0xA2, 0x5C}, "Relic.WAV" },
+	{ {0x10, 0x0C, 0x10, 0x56}, "Melonkale.WAV" },
 };
 #define SONG_TABLE_COUNT (sizeof(songTable) / sizeof(songTable[0]))
 
@@ -239,7 +242,7 @@ int main(void)
 	  // Polled every 20ms
 	  UI_Poll(&player);
 
-	  // 3. RFID -- polls every 100ms by flag set by the TIM2 ISR.
+	  // 3. RFID -- polls every 100ms by flag set by the TIM1 ISR.
 	  //    The worst-case of the internal blocking of
 	  //    ~50ms in RequestA's timeout/error path fits well inside the
 	  //    ~93ms of slack the 4096-frame I2S half-buffer provides.
