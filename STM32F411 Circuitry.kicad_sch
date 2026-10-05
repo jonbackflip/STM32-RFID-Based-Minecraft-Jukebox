@@ -5,6 +5,147 @@
 	(uuid "b36c73a5-66a5-437a-aed4-4aa502045c8c")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:Conn_01x01_Socket"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x01_Socket"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x01, script generated"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Conn_01x01_Socket_1_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Connector:Conn_01x02_Pin"
 			(pin_names
 				(offset 1.016)
@@ -3447,6 +3588,156 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Switch:SW_SPST"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_SPST"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Single Pole Single Throw (SPST) switch"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "switch lever"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SW_SPST_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 0.254) (xy 1.524 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_SPST_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3.3V"
 			(power global)
 			(pin_numbers
@@ -4012,12 +4303,6 @@
 		(uuid "16f8f5ff-c7cf-401d-83de-51416cfcf79d")
 	)
 	(junction
-		(at 223.52 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1be7eaca-ddf2-4ec8-a0b4-c5ac01683957")
-	)
-	(junction
 		(at 55.88 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4054,10 +4339,22 @@
 		(uuid "6b59858c-78b0-40ec-8f94-a691a2d86615")
 	)
 	(junction
+		(at 147.32 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7969b6d6-0915-4c5e-991b-70ab245aded1")
+	)
+	(junction
 		(at 67.31 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8638bf82-60ef-4116-85df-c75aeac260f1")
+	)
+	(junction
+		(at 220.98 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8ef16001-0a3d-40a9-8a69-a6a33e282836")
 	)
 	(junction
 		(at 76.2 36.83)
@@ -4076,6 +4373,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c5905d4d-2884-4c60-86a7-68db22909f2b")
+	)
+	(junction
+		(at 204.47 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c7010193-974e-4d26-88ee-8a60d190e3af")
 	)
 	(junction
 		(at 66.04 36.83)
@@ -4160,10 +4463,6 @@
 		(uuid "782315a3-42d2-41e8-a3a8-00e35638a684")
 	)
 	(no_connect
-		(at 146.05 50.8)
-		(uuid "80082afa-9b5d-4b58-997a-677009db9041")
-	)
-	(no_connect
 		(at 110.49 66.04)
 		(uuid "b1e67e2d-2a6e-4c89-ba02-7f38f9b7e726")
 	)
@@ -4213,7 +4512,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 81.28) (xy 213.36 81.28)
+			(xy 201.93 81.28) (xy 222.25 81.28)
 		)
 		(stroke
 			(width 0)
@@ -4273,6 +4572,16 @@
 	)
 	(wire
 		(pts
+			(xy 217.17 76.2) (xy 222.25 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e29d096-a958-49f5-97fc-6e23838fb8c0")
+	)
+	(wire
+		(pts
 			(xy 36.83 36.83) (xy 45.72 36.83)
 		)
 		(stroke
@@ -4280,6 +4589,16 @@
 			(type default)
 		)
 		(uuid "0fd7e64f-82f4-40ef-a66d-e0277d3bdffe")
+	)
+	(wire
+		(pts
+			(xy 219.71 97.79) (xy 220.98 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "112ee691-744a-4d45-ab38-58241f2f1cb1")
 	)
 	(wire
 		(pts
@@ -4300,6 +4619,16 @@
 			(type default)
 		)
 		(uuid "12108e2d-2149-48e1-8eb3-ea7c2d60711c")
+	)
+	(wire
+		(pts
+			(xy 222.25 76.2) (xy 222.25 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14536667-e42a-45fb-942e-269920020b65")
 	)
 	(wire
 		(pts
@@ -4413,7 +4742,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 83.82) (xy 213.36 83.82)
+			(xy 201.93 83.82) (xy 219.71 83.82)
 		)
 		(stroke
 			(width 0)
@@ -4543,6 +4872,16 @@
 	)
 	(wire
 		(pts
+			(xy 147.32 50.8) (xy 146.05 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42b35c34-2fd8-470e-939f-21c582a1d148")
+	)
+	(wire
+		(pts
 			(xy 49.53 67.31) (xy 49.53 72.39)
 		)
 		(stroke
@@ -4563,6 +4902,16 @@
 	)
 	(wire
 		(pts
+			(xy 219.71 93.98) (xy 219.71 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48a26387-c0b4-4166-9f78-88f7fac59c7c")
+	)
+	(wire
+		(pts
 			(xy 125.73 38.1) (xy 125.73 40.64)
 		)
 		(stroke
@@ -4580,16 +4929,6 @@
 			(type default)
 		)
 		(uuid "4b0eccac-001b-4194-a74b-0cac842bf4a1")
-	)
-	(wire
-		(pts
-			(xy 207.01 76.2) (xy 207.01 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4b8a423b-0b1f-401c-9052-7d8f133b8b33")
 	)
 	(wire
 		(pts
@@ -4663,6 +5002,16 @@
 	)
 	(wire
 		(pts
+			(xy 222.25 93.98) (xy 222.25 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "617ba980-ff4b-4ddd-aa2b-3a8518c49f72")
+	)
+	(wire
+		(pts
 			(xy 45.72 44.45) (xy 45.72 46.99)
 		)
 		(stroke
@@ -4710,6 +5059,16 @@
 			(type solid)
 		)
 		(uuid "66157fec-cbf0-44a0-a433-cd146ea3dbcf")
+	)
+	(wire
+		(pts
+			(xy 222.25 97.79) (xy 220.98 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "676c9d1c-98f6-4f9d-9d4d-4722f071fbf9")
 	)
 	(wire
 		(pts
@@ -4843,6 +5202,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 48.26) (xy 147.32 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74862c47-39e2-4b44-ac26-9c2c1e1090a6")
+	)
+	(wire
+		(pts
 			(xy 55.88 44.45) (xy 55.88 46.99)
 		)
 		(stroke
@@ -4900,16 +5269,6 @@
 			(type default)
 		)
 		(uuid "815f2c9a-ba29-4b83-8d00-84e62e047e85")
-	)
-	(wire
-		(pts
-			(xy 223.52 83.82) (xy 223.52 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "820829cc-f886-4990-a49d-697ab9b85dd8")
 	)
 	(wire
 		(pts
@@ -5023,6 +5382,16 @@
 	)
 	(wire
 		(pts
+			(xy 222.25 81.28) (xy 222.25 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d776a11-1be7-4e2e-b4a1-091e46729e92")
+	)
+	(wire
+		(pts
 			(xy 36.83 44.45) (xy 36.83 46.99)
 		)
 		(stroke
@@ -5063,7 +5432,7 @@
 	)
 	(wire
 		(pts
-			(xy 223.52 81.28) (xy 223.52 83.82)
+			(xy 220.98 97.79) (xy 220.98 100.33)
 		)
 		(stroke
 			(width 0)
@@ -5123,6 +5492,16 @@
 	)
 	(wire
 		(pts
+			(xy 147.32 48.26) (xy 147.32 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad34e6dd-46d5-434e-931f-34aae66ade2c")
+	)
+	(wire
+		(pts
 			(xy 182.88 143.51) (xy 199.39 143.51)
 		)
 		(stroke
@@ -5150,16 +5529,6 @@
 			(type default)
 		)
 		(uuid "b08c87df-01f9-42da-b87b-4ec840e6442e")
-	)
-	(wire
-		(pts
-			(xy 218.44 81.28) (xy 223.52 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0df87f5-3328-4e1d-acd1-15e5d66fbed1")
 	)
 	(wire
 		(pts
@@ -5210,6 +5579,16 @@
 			(type default)
 		)
 		(uuid "b97a4c73-8737-453c-88c8-99410aaabf73")
+	)
+	(wire
+		(pts
+			(xy 204.47 69.85) (xy 204.47 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be542618-eb0e-4c6f-97d4-2dd03350833d")
 	)
 	(wire
 		(pts
@@ -5403,6 +5782,16 @@
 	)
 	(wire
 		(pts
+			(xy 210.82 69.85) (xy 204.47 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8ee5119-1448-44d3-928d-c1e0d6b03b1f")
+	)
+	(wire
+		(pts
 			(xy 173.99 50.8) (xy 176.53 50.8)
 		)
 		(stroke
@@ -5413,6 +5802,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 50.8) (xy 147.32 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de1664bf-ca9a-455b-83d9-6d9a3199b009")
+	)
+	(wire
+		(pts
 			(xy 201.93 93.98) (xy 204.47 93.98)
 		)
 		(stroke
@@ -5420,16 +5819,6 @@
 			(type default)
 		)
 		(uuid "e0bd5633-3bdc-4bb5-bcf5-7f327fb01468")
-	)
-	(wire
-		(pts
-			(xy 218.44 83.82) (xy 223.52 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e4db469c-787c-471d-8497-92df18ec30f3")
 	)
 	(wire
 		(pts
@@ -5563,6 +5952,16 @@
 	)
 	(wire
 		(pts
+			(xy 219.71 88.9) (xy 219.71 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe0347d4-10b7-45ad-a57c-0d5822564101")
+	)
+	(wire
+		(pts
 			(xy 200.66 48.26) (xy 200.66 52.07)
 		)
 		(stroke
@@ -5630,6 +6029,16 @@
 			(justify right bottom)
 		)
 		(uuid "7edb933b-727c-4274-8565-885778da6ea7")
+	)
+	(label "Insert_Disc_Detect"
+		(at 148.59 48.26 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "84c4477b-7668-494c-985e-34fb9ce0b8f6")
 	)
 	(label "RCC_OSC_OUT"
 		(at 96.52 60.96 0)
@@ -5700,6 +6109,16 @@
 			(justify left bottom)
 		)
 		(uuid "cf60e13b-28e5-4b87-a749-84a9df172eda")
+	)
+	(label "USB_5V"
+		(at 210.82 69.85 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f72a827f-0271-42ae-81cc-92e129d15da2")
 	)
 	(label "PB2"
 		(at 101.6 81.28 180)
@@ -6294,84 +6713,6 @@
 			(project "STM32JukeboxPCB"
 				(path "/61b83946-52c5-4602-873b-f3d15a644cf9/f2971081-df0c-4304-a3ff-68cbc01be96a"
 					(reference "C7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 207.01 73.66 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0cfc25af-0dd0-4e51-ae75-8435f3c3a80d")
-		(property "Reference" "#PWR063"
-			(at 207.01 77.47 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 207.01 68.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 207.01 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 207.01 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 207.01 73.66 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d31c7f26-41cb-4da6-b7ce-f5d09d25d2a8")
-		)
-		(instances
-			(project "STM32JukeboxPCB"
-				(path "/61b83946-52c5-4602-873b-f3d15a644cf9/f2971081-df0c-4304-a3ff-68cbc01be96a"
-					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -7089,7 +7430,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 223.52 85.09 0)
+		(at 220.98 100.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7100,7 +7441,7 @@
 		(fields_autoplaced yes)
 		(uuid "4f1d7670-1de6-4d36-b983-a7a54185072a")
 		(property "Reference" "#PWR045"
-			(at 223.52 91.44 0)
+			(at 220.98 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7111,7 +7452,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 223.52 90.17 0)
+			(at 220.98 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7121,7 +7462,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 223.52 85.09 0)
+			(at 220.98 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7132,7 +7473,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 223.52 85.09 0)
+			(at 220.98 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7143,7 +7484,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 223.52 85.09 0)
+			(at 220.98 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8777,8 +9118,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small")
-		(at 215.9 81.28 270)
+		(lib_id "Connector:Conn_01x01_Socket")
+		(at 153.67 50.8 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8786,30 +9127,31 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b560ba66-b874-460a-8aa8-320f5e035f34")
-		(property "Reference" "R17"
-			(at 215.9 76.2 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "5.1k"
-			(at 215.9 78.74 90)
+		(uuid "b2d1c5b5-cbeb-40e5-a81a-ff459b2ed2d4")
+		(property "Reference" "J10"
+			(at 157.734 49.276 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 215.9 81.28 0)
+		(property "Value" "Conn_1x1"
+			(at 154.94 50.8 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+			(at 153.67 50.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8820,7 +9162,84 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 215.9 81.28 0)
+			(at 153.67 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 153.67 50.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9b9bf84b-342d-43c9-828c-1aa661f37bf7")
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9/f2971081-df0c-4304-a3ff-68cbc01be96a"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 222.25 91.44 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b560ba66-b874-460a-8aa8-320f5e035f34")
+		(property "Reference" "R17"
+			(at 227.33 91.44 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 224.79 91.44 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 222.25 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8831,7 +9250,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 215.9 81.28 0)
+			(at 222.25 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8851,6 +9270,84 @@
 			(project "STM32JukeboxPCB"
 				(path "/61b83946-52c5-4602-873b-f3d15a644cf9/f2971081-df0c-4304-a3ff-68cbc01be96a"
 					(reference "R17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 222.25 73.66 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b87121cc-ee14-437f-960a-45f68b79411f")
+		(property "Reference" "#PWR063"
+			(at 222.25 77.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 222.25 68.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 222.25 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 222.25 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 222.25 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c83b914c-060c-420d-b37c-1ad228a17ba5")
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9/f2971081-df0c-4304-a3ff-68cbc01be96a"
+					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -9644,7 +10141,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 215.9 83.82 270)
+		(at 219.71 91.44 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -9656,7 +10153,7 @@
 		(fields_autoplaced yes)
 		(uuid "cc367b99-45ca-45a3-b621-762398e471c4")
 		(property "Reference" "R18"
-			(at 215.9 88.9 90)
+			(at 214.63 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9666,7 +10163,7 @@
 			)
 		)
 		(property "Value" "5.1k"
-			(at 215.9 86.36 90)
+			(at 217.17 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9676,7 +10173,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 215.9 83.82 0)
+			(at 219.71 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9687,7 +10184,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 215.9 83.82 0)
+			(at 219.71 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9698,7 +10195,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 215.9 83.82 0)
+			(at 219.71 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9718,6 +10215,85 @@
 			(project "STM32JukeboxPCB"
 				(path "/61b83946-52c5-4602-873b-f3d15a644cf9/f2971081-df0c-4304-a3ff-68cbc01be96a"
 					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_SPST")
+		(at 212.09 76.2 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d2fd3e7c-f89d-464a-b1d3-42aaa7c6e8fb")
+		(property "Reference" "SW3"
+			(at 212.09 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_SPST"
+			(at 212.09 73.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.00mm_Vertical"
+			(at 212.09 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 212.09 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Single Pole Single Throw (SPST) switch"
+			(at 212.09 76.2 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f7f812e1-9816-44b4-a7c5-668ad442dc7e")
+		)
+		(pin "2"
+			(uuid "917c82b5-6a0d-4b67-b425-dfcb03d9e5de")
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9/f2971081-df0c-4304-a3ff-68cbc01be96a"
+					(reference "SW3")
 					(unit 1)
 				)
 			)
