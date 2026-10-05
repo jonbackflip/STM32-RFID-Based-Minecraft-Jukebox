@@ -1,0 +1,1957 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "61b83946-52c5-4602-873b-f3d15a644cf9")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "High-Level Circuit Board Overview"
+		(exclude_from_sim no)
+		(at 130.302 38.608 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+		)
+		(uuid "1412b76d-0d40-42c4-b45b-3280c2929d4e")
+	)
+	(junction
+		(at 171.45 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "13a33ec6-ecbc-4027-8f2c-2390126115b7")
+	)
+	(junction
+		(at 173.99 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "58214b93-a386-4311-8bf5-c072fb6d2a63")
+	)
+	(junction
+		(at 168.91 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9afd5f68-0e9a-47c2-86b2-0f05c312e1f4")
+	)
+	(no_connect
+		(at 179.07 77.47)
+		(uuid "11cbc169-e06e-483b-9014-2a514205204a")
+	)
+	(no_connect
+		(at 212.09 77.47)
+		(uuid "92007f6f-ae48-4b34-bb2e-355da51128d1")
+	)
+	(no_connect
+		(at 212.09 105.41)
+		(uuid "cafa66d7-ea9a-4438-9199-60ea5373af4d")
+	)
+	(wire
+		(pts
+			(xy 184.15 85.09) (xy 173.99 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "020aa466-ee3b-4c2a-a132-6549e2aec90c")
+	)
+	(wire
+		(pts
+			(xy 156.21 81.28) (xy 156.21 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02aca6a8-c820-4f22-8691-0cdb115f706c")
+	)
+	(wire
+		(pts
+			(xy 86.36 71.12) (xy 109.22 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02dc20ce-90c3-4630-97be-b027d81aa224")
+	)
+	(wire
+		(pts
+			(xy 173.99 55.88) (xy 184.15 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a148399-9c66-4258-a331-df7e43c9acab")
+	)
+	(wire
+		(pts
+			(xy 173.99 55.88) (xy 173.99 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ee9a77f-5f0c-4de8-bbad-1cc435945dd3")
+	)
+	(wire
+		(pts
+			(xy 163.83 73.66) (xy 163.83 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11180a23-e06e-42ce-8dbf-2a83c9a7e26f")
+	)
+	(wire
+		(pts
+			(xy 171.45 53.34) (xy 184.15 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "120bfbe5-bea4-40af-87f7-8961933adaca")
+	)
+	(wire
+		(pts
+			(xy 161.29 53.34) (xy 161.29 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1513100e-563b-45f3-b8b9-aae57130fa58")
+	)
+	(wire
+		(pts
+			(xy 86.36 76.2) (xy 109.22 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19c1f5d4-dd21-457d-8dda-3e99e604b716")
+	)
+	(wire
+		(pts
+			(xy 148.59 60.96) (xy 171.45 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d799106-2bd6-4e89-b0ba-2bc8a3b436f5")
+	)
+	(wire
+		(pts
+			(xy 161.29 48.26) (xy 184.15 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23b68ca1-5716-48f8-b6ff-fda8dde31617")
+	)
+	(wire
+		(pts
+			(xy 92.71 45.72) (xy 92.71 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2435372d-6597-4890-a846-cbca7c2c55fc")
+	)
+	(wire
+		(pts
+			(xy 161.29 107.95) (xy 184.15 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26092b3c-638f-44e9-b48e-06f49d370ba6")
+	)
+	(wire
+		(pts
+			(xy 179.07 77.47) (xy 184.15 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ef2e5ab-cb27-4bc4-a013-6a01b0d2c6de")
+	)
+	(wire
+		(pts
+			(xy 86.36 66.04) (xy 109.22 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "393f5d53-523d-40d3-a3df-17444425822c")
+	)
+	(wire
+		(pts
+			(xy 148.59 63.5) (xy 173.99 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a2077e4-f737-47ef-8865-38e1c6f22427")
+	)
+	(wire
+		(pts
+			(xy 95.25 43.18) (xy 95.25 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b4ec05f-498e-4a2a-a710-6c1bdfc07e05")
+	)
+	(wire
+		(pts
+			(xy 207.01 77.47) (xy 212.09 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43fb7e2b-634a-4725-bcd0-66e2d4896ba8")
+	)
+	(wire
+		(pts
+			(xy 179.07 74.93) (xy 184.15 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4902bac9-9a02-4ae5-8dad-a7a04f72f596")
+	)
+	(wire
+		(pts
+			(xy 161.29 76.2) (xy 161.29 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "534ec544-6e27-4146-83a8-6a774b550334")
+	)
+	(wire
+		(pts
+			(xy 148.59 81.28) (xy 156.21 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56d8f614-1f56-44d0-97ac-8bdad237d265")
+	)
+	(wire
+		(pts
+			(xy 184.15 110.49) (xy 158.75 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56feb824-31d2-48f0-bfb4-479fa394d71e")
+	)
+	(wire
+		(pts
+			(xy 171.45 60.96) (xy 171.45 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f64d918-7a63-41f9-a8b4-43a2c20a191a")
+	)
+	(wire
+		(pts
+			(xy 109.22 93.98) (xy 105.41 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "608598a0-5d10-419a-b0c9-3db20cfae548")
+	)
+	(wire
+		(pts
+			(xy 168.91 50.8) (xy 184.15 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73ff5321-955d-4594-aea9-95ce5c4fe80f")
+	)
+	(wire
+		(pts
+			(xy 153.67 83.82) (xy 153.67 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "800d220a-5e22-44f7-9e5c-b1d0b688819b")
+	)
+	(wire
+		(pts
+			(xy 148.59 53.34) (xy 161.29 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84b5658c-6331-4c1c-a178-0b0434a0bbd0")
+	)
+	(wire
+		(pts
+			(xy 86.36 73.66) (xy 109.22 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "886b5f34-76e4-4a4b-879f-cda5caa08805")
+	)
+	(wire
+		(pts
+			(xy 109.22 83.82) (xy 95.25 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e001655-76a5-4992-8005-55dea60e62dc")
+	)
+	(wire
+		(pts
+			(xy 109.22 86.36) (xy 97.79 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90b929bc-8add-46d4-b657-305811b2b7e1")
+	)
+	(wire
+		(pts
+			(xy 171.45 53.34) (xy 171.45 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92a570d6-c9ad-4b13-888a-f904d57a0045")
+	)
+	(wire
+		(pts
+			(xy 92.71 55.88) (xy 109.22 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92dab853-954d-478a-b862-65679ab14c5c")
+	)
+	(wire
+		(pts
+			(xy 158.75 78.74) (xy 148.59 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97f5a056-4835-451b-8b83-a6a36613e1c2")
+	)
+	(wire
+		(pts
+			(xy 173.99 63.5) (xy 173.99 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98df7586-f7cd-420d-ace6-8d7f0206ec25")
+	)
+	(wire
+		(pts
+			(xy 86.36 111.76) (xy 102.87 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a5a7352-f8e8-4932-992a-e7adfc2adb04")
+	)
+	(wire
+		(pts
+			(xy 97.79 86.36) (xy 97.79 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b1090a7-06d4-4169-9ea7-a279fbc4e12f")
+	)
+	(wire
+		(pts
+			(xy 102.87 91.44) (xy 109.22 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ce97752-dffc-42c2-80c5-4d544c9b44dd")
+	)
+	(wire
+		(pts
+			(xy 168.91 58.42) (xy 168.91 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f9c2ef7-2071-470e-b06e-ec4f8ff95c42")
+	)
+	(wire
+		(pts
+			(xy 148.59 68.58) (xy 179.07 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1f05db6-1322-457e-a27e-c7bdac952ead")
+	)
+	(wire
+		(pts
+			(xy 92.71 81.28) (xy 109.22 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3b52d2f-2511-478e-b458-fe109bec8f63")
+	)
+	(wire
+		(pts
+			(xy 153.67 115.57) (xy 184.15 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a52bb48a-2fb2-4891-9e49-04a67487bfc6")
+	)
+	(wire
+		(pts
+			(xy 163.83 105.41) (xy 184.15 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6a831d2-fcff-436b-84e8-1970d9607796")
+	)
+	(wire
+		(pts
+			(xy 156.21 113.03) (xy 184.15 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a803ac1d-9f2c-42f1-b22b-637b66004767")
+	)
+	(wire
+		(pts
+			(xy 86.36 45.72) (xy 92.71 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8e46d73-9880-459f-9732-29faad61af89")
+	)
+	(wire
+		(pts
+			(xy 102.87 111.76) (xy 102.87 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9497ba8-8110-4bd4-bc61-f3848e3c9b00")
+	)
+	(wire
+		(pts
+			(xy 148.59 76.2) (xy 161.29 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9d8db32-3e6b-42d0-8437-81854ef923c8")
+	)
+	(wire
+		(pts
+			(xy 148.59 73.66) (xy 163.83 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aae19362-8f0f-4b59-b402-7420d97076ad")
+	)
+	(wire
+		(pts
+			(xy 86.36 68.58) (xy 109.22 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af0a570e-1ac7-4126-a30c-57f2c0d3f767")
+	)
+	(wire
+		(pts
+			(xy 105.41 93.98) (xy 105.41 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b035f331-2764-4cae-9a8b-4a778ad9a89a")
+	)
+	(wire
+		(pts
+			(xy 86.36 63.5) (xy 109.22 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4501391-fc66-4c66-b018-a2d5915bf84a")
+	)
+	(wire
+		(pts
+			(xy 148.59 58.42) (xy 168.91 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7636129-e04c-4bef-893a-0992b2d838e9")
+	)
+	(wire
+		(pts
+			(xy 207.01 105.41) (xy 212.09 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7c684f6-514b-4b4e-ac23-f297c765051f")
+	)
+	(wire
+		(pts
+			(xy 184.15 80.01) (xy 168.91 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb75d24d-cc76-4e7e-93ef-471e196003a7")
+	)
+	(wire
+		(pts
+			(xy 95.25 53.34) (xy 109.22 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "beea86de-f0f0-4e4b-a3bb-8b6c8390ccd4")
+	)
+	(wire
+		(pts
+			(xy 86.36 60.96) (xy 109.22 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf8c031c-8d65-48ba-9ff6-726eefd9229e")
+	)
+	(wire
+		(pts
+			(xy 105.41 114.3) (xy 86.36 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0f70d10-a0bf-45bc-94ef-31625de1d834")
+	)
+	(wire
+		(pts
+			(xy 95.25 93.98) (xy 86.36 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9c69a3a-8caa-4e4e-8c73-e5473a0d037c")
+	)
+	(wire
+		(pts
+			(xy 184.15 82.55) (xy 171.45 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca4658fd-e9dd-49e2-8da8-a29c4680d4ac")
+	)
+	(wire
+		(pts
+			(xy 168.91 58.42) (xy 168.91 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cce1df3a-cdc6-4da6-ad7a-dbbf397e8627")
+	)
+	(wire
+		(pts
+			(xy 158.75 110.49) (xy 158.75 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd889e59-10b5-4422-a7a5-d905e3fdbc8f")
+	)
+	(wire
+		(pts
+			(xy 148.59 83.82) (xy 153.67 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df541050-df9d-462f-92da-f5f2307787b1")
+	)
+	(wire
+		(pts
+			(xy 86.36 91.44) (xy 92.71 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7b49397-dabb-4dd1-8c10-953402b37296")
+	)
+	(wire
+		(pts
+			(xy 95.25 83.82) (xy 95.25 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9d652f6-459a-4908-a3b3-36fa9cb6fe81")
+	)
+	(wire
+		(pts
+			(xy 179.07 68.58) (xy 179.07 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed460cc0-5f4c-474a-90fd-66f85b759df0")
+	)
+	(wire
+		(pts
+			(xy 92.71 91.44) (xy 92.71 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efb12fc9-6ee8-49f2-a539-020005494a7b")
+	)
+	(wire
+		(pts
+			(xy 97.79 96.52) (xy 86.36 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f09c4b0f-d7f5-4714-a0a9-8f49533d402e")
+	)
+	(wire
+		(pts
+			(xy 86.36 43.18) (xy 95.25 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f979594d-817c-4b22-b27d-db70d79671d2")
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 124.46 110.49 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2bb6c210-4e4f-42a4-b3d8-21ebb2849e2a")
+		(property "Reference" "H1"
+			(at 127 109.2199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 127 111.7599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+			(at 124.46 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 124.46 110.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 124.46 123.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "42fbd060-ff89-4e93-8ccc-7dfea28c94ab")
+		(property "Reference" "H3"
+			(at 127 121.9199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 127 124.4599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+			(at 124.46 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 124.46 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 124.46 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "89bdfe65-e51c-4c89-abaf-5fd575151a55")
+		(property "Reference" "H2"
+			(at 127 115.5699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 127 118.1099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.7mm_M2.5_DIN965"
+			(at 124.46 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 124.46 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 184.15 96.52)
+		(size 22.86 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "1c899944-1df2-4d12-8673-e09010b1750d")
+		(property "Sheetname" "RFID MFRC522 Sheet"
+			(at 184.15 95.8084 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MFRC522 Circuitry.kicad_sch"
+			(at 184.15 120.142 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "MISO" output
+			(at 184.15 113.03 180)
+			(uuid "06384196-b9a4-401b-80a2-00d00aaef906")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MOSI" input
+			(at 184.15 110.49 180)
+			(uuid "367ca6a3-2952-4eaf-b310-13d15e784d07")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RQ" bidirectional
+			(at 207.01 105.41 0)
+			(uuid "3cbeb4d7-163c-4034-a7d4-cc9ff074326e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "RST" bidirectional
+			(at 184.15 115.57 180)
+			(uuid "6e899cc0-cf70-40f9-9b84-c5603bd9bb55")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SCK" bidirectional
+			(at 184.15 107.95 180)
+			(uuid "432fbb38-cb8a-4fc2-a268-d5ac39d53ca0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDA {slash} CS" bidirectional
+			(at 184.15 105.41 180)
+			(uuid "ff77eb4a-58c5-4b15-8c10-8e16df42a2c7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 66.04 87.63)
+		(size 20.32 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "2c43769c-4332-4ba0-bd14-ab794836031f")
+		(property "Sheetname" "Rotary Encoder Sheet"
+			(at 66.04 86.9184 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Rotary Encoder Circuitry.kicad_sch"
+			(at 48.26 100.838 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A1" bidirectional
+			(at 86.36 91.44 0)
+			(uuid "70e3aa55-c1a7-4bc3-aa4b-120a1635c868")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A2" bidirectional
+			(at 86.36 93.98 0)
+			(uuid "5f8ddef3-5c15-4c91-ab4a-0ea59bcb6ef9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BTN" bidirectional
+			(at 86.36 96.52 0)
+			(uuid "b419c831-4420-4af2-8fc4-bf2f676b1d06")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 66.04 107.95)
+		(size 20.32 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "47b98930-1226-45c6-a79a-9f0e7f633ae5")
+		(property "Sheetname" "Power Flags & Testing Pads Sheet"
+			(at 52.578 107.188 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power Flags & Testing Pads.kicad_sch"
+			(at 44.196 121.158 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "USART2_RX" bidirectional
+			(at 86.36 111.76 0)
+			(uuid "63cb3a38-51b1-4a57-837f-1657b3ae036a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USART2_TX" bidirectional
+			(at 86.36 114.3 0)
+			(uuid "c6bddaf2-176f-4352-b3ed-2684c93ac4cd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 184.15 68.58)
+		(size 22.86 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "8ce05cab-ab7c-418c-b4ea-a9d0321249f7")
+		(property "Sheetname" "Headphone DAC & Amplifier Sheet"
+			(at 184.15 67.8684 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "PCM5102A & HT97226 Circuitry.kicad_sch"
+			(at 184.15 89.4846 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "BCK" input
+			(at 184.15 80.01 180)
+			(uuid "a19b37d5-9564-4940-9aa7-30fe971eb367")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "DIN" input
+			(at 184.15 82.55 180)
+			(uuid "691b1947-b0b3-4c55-8495-a4c17598d238")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MCLK" input
+			(at 207.01 77.47 0)
+			(uuid "90341591-4638-44ac-a6c8-5b2a0e807244")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "WS" input
+			(at 184.15 85.09 180)
+			(uuid "7e2f3432-8c58-4f58-b438-f6cf44095716")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{slash}SD" bidirectional
+			(at 184.15 77.47 180)
+			(uuid "05a0c877-a816-40d2-b81b-0994dab2a9b5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "HDPHN_JACK_DETECT" output
+			(at 184.15 74.93 180)
+			(uuid "9c55bad4-9412-4579-825a-2b6b1c73b804")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 184.15 39.37)
+		(size 22.86 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ae0bf140-4ef8-496b-a279-4618c6fe20dc")
+		(property "Sheetname" "Speaker DAC & Amplifier Sheet"
+			(at 184.15 38.6584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MAX98367A Circuitry.kicad_sch"
+			(at 184.15 61.5446 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "BCLK" input
+			(at 184.15 50.8 180)
+			(uuid "4eace6af-b05f-435b-bf3f-ab0a96cfd2e2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "DIN" input
+			(at 184.15 53.34 180)
+			(uuid "407b1d05-ad99-4d7d-8a7f-8860f00ca842")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "LRCLK" input
+			(at 184.15 55.88 180)
+			(uuid "67923bc0-0cf6-4f4c-b524-4ca70926b62a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "{slash}SD_MODE" input
+			(at 184.15 48.26 180)
+			(uuid "3a6ff60a-f1ee-42fe-a439-3ddc6aa08d52")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 66.04 57.15)
+		(size 20.32 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b7505939-2fd2-4ae5-89ad-f81cdbe12a14")
+		(property "Sheetname" "SD Card Sheet"
+			(at 66.04 56.4384 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SD Card Circuitry.kicad_sch"
+			(at 55.118 80.518 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SDIO_CK" bidirectional
+			(at 86.36 63.5 0)
+			(uuid "2c432dd0-5194-4d0f-955b-11e2d6525dfa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDIO_CMD" bidirectional
+			(at 86.36 66.04 0)
+			(uuid "cbbc1a19-dde4-43ce-964d-5717367d4c8d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDIO_D0" bidirectional
+			(at 86.36 68.58 0)
+			(uuid "d49b484c-c788-4d05-9911-6ad306b3a26a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDIO_D1" bidirectional
+			(at 86.36 71.12 0)
+			(uuid "0250040a-26e2-431b-9808-5fe69df869b4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDIO_D2" bidirectional
+			(at 86.36 73.66 0)
+			(uuid "3538bd22-ab60-4cf4-8c81-af147ac4c0c7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDIO_D3" bidirectional
+			(at 86.36 76.2 0)
+			(uuid "94bb26c8-eae3-461b-a4f6-072e273742d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SD_DETECT" bidirectional
+			(at 86.36 60.96 0)
+			(uuid "2b624904-b749-467b-904c-f1dcdefd5675")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 66.04 39.37)
+		(size 20.32 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e90932c1-ddfd-4bdb-b225-e826ad77ed39")
+		(property "Sheetname" "SSD1306 OLED Sheet"
+			(at 66.04 38.6584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SSD1306 OLED Circuitry.kicad_sch"
+			(at 48.514 50.038 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "SCL" bidirectional
+			(at 86.36 43.18 0)
+			(uuid "c97472c8-f3d3-466c-a5ac-eeb04f71f6dc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDA" bidirectional
+			(at 86.36 45.72 0)
+			(uuid "b93a981c-351e-4d5a-94d3-1801539920ab")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 109.22 48.26)
+		(size 39.37 49.53)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f2971081-df0c-4304-a3ff-68cbc01be96a")
+		(property "Sheetname" "STM32F411 Sheet"
+			(at 109.22 47.5484 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "STM32F411 Circuitry.kicad_sch"
+			(at 109.22 98.3746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CS" output
+			(at 148.59 73.66 0)
+			(uuid "3b059f22-b1fd-491f-974d-70e464111eff")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "HEADPHONE_JACK_DETECT" input
+			(at 148.59 68.58 0)
+			(uuid "32e209b7-9403-4a03-913a-10165f9b1387")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C1_SCL" bidirectional
+			(at 109.22 53.34 180)
+			(uuid "89a66641-0321-4ee2-9bac-54ad54b70168")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "I2C1_SDA" bidirectional
+			(at 109.22 55.88 180)
+			(uuid "6ce54a10-7517-4cce-b9f9-efc00bc0c258")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "I2S_CK" output
+			(at 148.59 58.42 0)
+			(uuid "04e3c517-bc44-4e84-baab-f6721fabe228")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2S_SD" output
+			(at 148.59 60.96 0)
+			(uuid "8ec5e67e-522f-4156-a875-64ae58bd5ff0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2S_WS" output
+			(at 148.59 63.5 0)
+			(uuid "517dd63a-939f-4bc0-8381-240732849a15")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "PAUSE_BUTTON" input
+			(at 109.22 86.36 180)
+			(uuid "2d73d7c3-4460-4e97-8157-6c100f076855")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "RESET" bidirectional
+			(at 148.59 83.82 0)
+			(uuid "87d3fda9-ada0-4510-9e2c-c3606d74b6ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDIO_CK" bidirectional
+			(at 109.22 63.5 180)
+			(uuid "a066c4a9-2ef5-42e2-88ed-84d67bfa6354")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDIO_D0" bidirectional
+			(at 109.22 68.58 180)
+			(uuid "84af75c7-7232-442c-a905-cf8085121413")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDIO_D1" bidirectional
+			(at 109.22 71.12 180)
+			(uuid "8c1c6f69-d763-4e08-b026-565ce750937c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDIO_D2" bidirectional
+			(at 109.22 73.66 180)
+			(uuid "66ec8580-fa24-4fbb-b671-4148fa3789b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDIO_D3" bidirectional
+			(at 109.22 76.2 180)
+			(uuid "93caffd9-0004-45f4-8c89-0912ed3d9c32")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SD_DETECT" input
+			(at 109.22 60.96 180)
+			(uuid "798ebe32-3084-4f51-9831-5e17b98796d5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SPEAKER_ENABLE" output
+			(at 148.59 53.34 0)
+			(uuid "b8a96eed-63af-4b10-bd9c-7bacdf08e14b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SPI5_MOSI" output
+			(at 148.59 78.74 0)
+			(uuid "f980e2b1-de06-4b52-8720-de01b3c109ee")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SPI5_SCK" output
+			(at 148.59 76.2 0)
+			(uuid "0fd39559-d6ab-454e-830d-4e8c76857efe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SPI_MISO" input
+			(at 148.59 81.28 0)
+			(uuid "562d60da-e8c0-4d2a-9f34-90cf12830e3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TIM4_CH1" input
+			(at 109.22 81.28 180)
+			(uuid "678b2084-9ee0-44de-818c-6a4feee7ed7c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TIM4_CH2" input
+			(at 109.22 83.82 180)
+			(uuid "2aa5fdca-57f9-44c0-80de-27651dfd2b2c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USART2_RX" input
+			(at 109.22 91.44 180)
+			(uuid "3cea9f12-9695-4599-a922-36d7a8617787")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "USART2_TX" output
+			(at 109.22 93.98 180)
+			(uuid "16392f70-2d88-421c-82c8-59a1bfdc7188")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDIO_CMD" bidirectional
+			(at 109.22 66.04 180)
+			(uuid "44aac2f1-9b9c-42a4-a870-289790ac4ab7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "STM32JukeboxPCB"
+				(path "/61b83946-52c5-4602-873b-f3d15a644cf9"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
