@@ -71,16 +71,26 @@ volatile uint8_t oledNeedsRedraw = 0;
 // Toggled every TIM2 tick (250ms) -> 2Hz blinking rate
 static volatile uint8_t arrowBlinkOn = 0;
 
-// ---- RFID polling state (set by TIM1 ISR, checked once per main loop) --------------------------
-volatile uint8_t rfidPollDue = 0;
-typedef enum { RFID_WAIT_CARD, RFID_CARD_PRESENT } RfidState_t;
-static RfidState_t rfidState = RFID_WAIT_CARD;
+// ---- RFID detection, triggered by the disc-press button on PA1 ----------
+// The button's EXTI ISR only arms a burst -- it must NOT call
+// MFRC522_RequestA() itself (each call can block tens of ms; 8 of them
+// back-to-back inside an interrupt could stall I2S refills for most of
+// a second). The main loop steps the burst one poll at a time, 100ms
+// apart, same timing discipline as the old continuous TIM1 poll.
+#define RFID_BURST_POLL_COUNT      4   // total polls per button press
+#define RFID_BURST_CONFIRM_COUNT   1   // need at least this many "present" results
+#define RFID_POLL_INTERVAL_MS      100 // spacing between polls within a burst
+#define BUTTON_DEBOUNCE_MS         300 // ignore re-triggers faster than this
 
-#define RFID_DETECT_CONFIRM_COUNT   3
-#define RFID_REMOVE_CONFIRM_COUNT   5
+typedef enum { RFID_BURST_IDLE, RFID_BURST_ACTIVE } RfidBurstState_t;
+static volatile RfidBurstState_t burstState = RFID_BURST_IDLE; // set by EXTI ISR, cleared by main loop
+static uint32_t burstLastPollTime = 0;
+static uint8_t  burstPollsRemaining = 0;
+static uint8_t  burstGoodCount = 0;
+static uint32_t lastButtonEventTime = 0;
 
-static uint8_t rfidGoodStreak = 0;
-static uint8_t rfidBadStreak  = 0;
+typedef enum { DISC_ABSENT, DISC_PRESENT } DiscState_t;
+static DiscState_t discState = DISC_ABSENT;
 
 // ---- UI polling (volume pot, pause button, headphone jack) --------------
 #define UI_POLL_INTERVAL_MS 20
@@ -154,7 +164,7 @@ uint8_t uid[4];
 MFRC522_t rfID = {&hspi5, CS_GPIO_Port, CS_Pin, RESET_GPIO_Port, RESET_Pin};
 WavPlayer_t player;
 
-static void RFID_Poll(MFRC522_t *dev, WavPlayer_t *wp);
+static void RFID_BurstStep(MFRC522_t *dev, WavPlayer_t *wp);
 static void UI_Poll(WavPlayer_t *wp);
 static void OLED_Redraw(WavPlayer_t *wp);
 
@@ -201,7 +211,7 @@ int main(void)
   MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_TIM_Base_Start_IT(&htim1);
+  // HAL_TIM_Base_Start_IT(&htim1);
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);
   __HAL_TIM_ENABLE_IT(&htim4, TIM_IT_UPDATE);
@@ -242,17 +252,11 @@ int main(void)
 	  // Polled every 20ms
 	  UI_Poll(&player);
 
-	  // 3. RFID -- polls every 100ms by flag set by the TIM1 ISR.
-	  //    The worst-case of the internal blocking of
-	  //    ~50ms in RequestA's timeout/error path fits well inside the
-	  //    ~93ms of slack the 4096-frame I2S half-buffer provides.
-	  if (rfidPollDue)
-	  {
-		  rfidPollDue = 0;
-		  RFID_Poll(&rfID, &player);
-	  }
-
-
+	  // 3. RFID -- a DISC-PRESS on PA1 sets the RFID_BURST_ACTIVE flag
+	  //    and starts an 8-poll burst (see HAL_GPIO_EXTI_Callback);
+	  //    RFID_BurstStep() advances it one poll per 100ms.
+	  //    Immediately returns if the RFID_BURST_ACTIVE flag is not set.
+	  RFID_BurstStep(&rfID, &player);
 
 	  // 4. OLED -- updated every 250ms by flag set by the TIM2 ISR,
 	  //    not redrawn every single pass.
@@ -676,6 +680,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : Disc_Insertion_BTN_Pin */
+  GPIO_InitStruct.Pin = Disc_Insertion_BTN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(Disc_Insertion_BTN_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : PAUSE_BTN_Pin */
   GPIO_InitStruct.Pin = PAUSE_BTN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
@@ -702,6 +712,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI1_IRQn);
+
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
   /* USER CODE END MX_GPIO_Init_2 */
@@ -721,11 +735,7 @@ void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if (htim->Instance == TIM1)
-	{
-		rfidPollDue = 1;
-	}
-	else if (htim->Instance == TIM2)
+	if (htim->Instance == TIM2)
     {
         oledNeedsRedraw = 1;
         arrowBlinkOn = ! arrowBlinkOn;
@@ -748,70 +758,94 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         }
 }
 
-
-static void RFID_Poll(MFRC522_t *dev, WavPlayer_t *wp)
+// Fires on the disc-press button's falling edge (PA1). Deliberately does
+// nothing but set the burst flag (to keep this ISR short).
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    uint8_t localAtqa[2];
-    uint8_t detected = (MFRC522_RequestA(dev, localAtqa) == STATUS_OK);
-    // USER_LOG("RFID_Poll() called");
-
-    if (rfidState == RFID_WAIT_CARD) // Check RFID CARD presence
+    if (GPIO_Pin == GPIO_PIN_1)
     {
-        if (detected)
+        uint32_t now = HAL_GetTick();
+
+        // Ignore re-triggers from switch bounce, and ignore a new press
+        // while a burst from a previous press is still in progress.
+        if (burstState == RFID_BURST_IDLE && (now - lastButtonEventTime) >= BUTTON_DEBOUNCE_MS)
         {
-            rfidBadStreak = 0;
-            rfidGoodStreak++;
-            // USER_LOG("Detected a card");
-
-            if (rfidGoodStreak >= RFID_DETECT_CONFIRM_COUNT)
-            {
-                rfidGoodStreak = 0;
-
-                if (MFRC522_ReadUid(dev, uid) == STATUS_OK)
-                {
-                    USER_LOG("CARD ID:%02X %02X %02X %02X", uid[0], uid[1], uid[2], uid[3]);
-
-                    const SongEntry_t *song = find_song_by_uid(uid);
-                    if (song)
-                    {
-                        USER_LOG("Playing %s", song->filePath);
-                        if (WavPlayer_Play(wp, song->filePath) != 0)
-                        {
-                            USER_LOG("Failed to open/parse WAV file");
-                        }
-                    }
-                    else
-                    {
-                        USER_LOG("Unknown tag -- no song mapped");
-                    }
-                }
-                rfidState = RFID_CARD_PRESENT;
-            }
-        }
-        else
-        {
-            rfidGoodStreak = 0; // Any miss resets the streak. Must be RFID_DETECT_CONFIRM_COUNT in a row.
+            lastButtonEventTime = now;
+            burstPollsRemaining = RFID_BURST_POLL_COUNT;
+            burstGoodCount = 0;
+            burstLastPollTime = now; // first poll fires ~100ms from now, in the main loop
+            burstState = RFID_BURST_ACTIVE;
         }
     }
-    else // RFID_CARD_PRESENT
-    {
-        if (!detected)
-        {
-            rfidGoodStreak = 0;
-            rfidBadStreak++;
+}
 
-            if (rfidBadStreak >= RFID_REMOVE_CONFIRM_COUNT)
+// Call every main-loop pass. Does NOTHING UNLESS a burst is active AND
+// 100ms have passed since the last poll within that burst -- so each
+// individual (potentially slow) MFRC522_RequestA() call is still spaced
+// out exactly like the old continuous polling was (100ms), just bounded
+// to 8 calls per button press instead of running forever.
+static void RFID_BurstStep(MFRC522_t *dev, WavPlayer_t *wp)
+{
+    if (burstState != RFID_BURST_ACTIVE) return;
+
+    uint32_t now = HAL_GetTick();
+    if ((now - burstLastPollTime) < RFID_POLL_INTERVAL_MS) return;
+    burstLastPollTime = now;
+
+    uint8_t localAtqa[2];
+    if (MFRC522_RequestA(dev, localAtqa) == STATUS_OK)
+    {
+        burstGoodCount++;
+    }
+    burstPollsRemaining--;
+
+    if (burstPollsRemaining > 0) return; // burst still in progress
+
+    // Burst complete -- decide what the button press meant based on
+    // whether a disc was already considered present.
+    burstState = RFID_BURST_IDLE;
+    uint8_t discDetected = (burstGoodCount >= RFID_BURST_CONFIRM_COUNT);
+    USER_LOG("Burst result: %u/%u detected", burstGoodCount, RFID_BURST_POLL_COUNT);
+
+    if (discState == DISC_ABSENT)
+    {
+        if (!discDetected)
+        {
+            USER_LOG("Insert not confirmed -- press again");
+            return;
+        }
+
+        if (MFRC522_ReadUid(dev, uid) == STATUS_OK)
+        {
+            USER_LOG("CARD ID:%02X %02X %02X %02X", uid[0], uid[1], uid[2], uid[3]);
+
+            const SongEntry_t *song = find_song_by_uid(uid);
+            if (song)
             {
-                rfidBadStreak = 0;
-                USER_LOG("Card removed");
-                WavPlayer_Stop(wp);
-                rfidState = RFID_WAIT_CARD;
+                USER_LOG("Playing %s", song->filePath);
+                if (WavPlayer_Play(wp, song->filePath) != 0)
+                {
+                    USER_LOG("Failed to open/parse WAV file");
+                }
+            }
+            else
+            {
+                USER_LOG("Unknown tag -- no song mapped");
             }
         }
-        else
+        discState = DISC_PRESENT;
+    }
+    else // DISC_PRESENT
+    {
+        if (discDetected)
         {
-            rfidBadStreak = 0; // Still there. Reset the removal streak.
+            USER_LOG("Still detected -- removal not confirmed");
+            return;
         }
+
+        USER_LOG("Removal confirmed");
+        WavPlayer_Stop(wp);
+        discState = DISC_ABSENT;
     }
 }
 

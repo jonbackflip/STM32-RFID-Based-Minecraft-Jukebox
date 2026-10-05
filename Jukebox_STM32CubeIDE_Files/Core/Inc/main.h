@@ -57,6 +57,9 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define Disc_Insertion_BTN_Pin GPIO_PIN_1
+#define Disc_Insertion_BTN_GPIO_Port GPIOA
+#define Disc_Insertion_BTN_EXTI_IRQn EXTI1_IRQn
 #define PAUSE_BTN_Pin GPIO_PIN_1
 #define PAUSE_BTN_GPIO_Port GPIOB
 #define SPEAKER_ENABLE_Pin GPIO_PIN_10
